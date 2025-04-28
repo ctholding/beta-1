@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CT Investimentos Holding Company - Investimentos responsáveis em energia sustentável e práticas ESG.">
+    <title>CT Investimentos Holding Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #80b918; /* Cor verde mais clara */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header .logo img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        /* Navegação (Menu) */
+        nav {
+            background-color: white; /* Fundo branco no menu */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionando sombra para o menu */
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: #333; /* Cor escura para contraste */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #80b918; /* Cor verde claro no hover */
+        }
+
+        .cta-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cta-buttons a {
+            color: #fff;
+            background-color: #2d6a4f; /* Cor verde escuro para os botões */
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            width: 160px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #80b918; /* Cor verde claro no hover */
+        }
+
+        /* Banner */
+        #banner {
+            background-color: #80b918; /* Cor verde claro */
+            background-image: url('banner-image.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #banner h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        #banner p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Seções */
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #2d6a4f; /* Cor verde escuro */
+            margin-bottom: 30px;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .card {
+            background-color: white;
+            width: 23%;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            color: #2d6a4f;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #80b918;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #2d6a4f; /* Cor verde escuro no hover */
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-menu {
+            margin: 20px 0;
+        }
+
+        .footer-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .footer-menu ul li a:hover {
+            color: #80b918; /* Cor verde claro no hover */
+        }
+
+        /* Formulário de Contato */
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #contact-form button {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #contact-form button:hover {
+            background-color: #80b918; /* Cor verde claro no hover */
+        }
+
+        /* Botões de WhatsApp e Contato */
+        .footer-contact a {
+            display: inline-block;
+            background-color: #25d366; /* Cor padrão do WhatsApp */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .footer-contact a:hover {
+            background-color: #128c7e; /* Cor mais escura do WhatsApp no hover */
+        }
+
+        .footer-contact .phone {
+            background-color: #2d6a4f;
+        }
+
+        .footer-contact .whatsapp {
+            background-color: #25d366;
+        }
+
+        /* Ajuste no botão ISO ESG */
+        .footer-contact .iso-esg {
+            background-color: #80b918;
+            padding: 5px 12px;
+            font-size: 12px;
+            border-radius: 50px;
+        }
+
+        .footer-contact .iso-esg:hover {
+            background-color: #2d6a4f;
+        }
+
+        /* Imagens em Círculo no Rodapé */
+        .footer-logos {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-logos img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff; /* Borda branca para contraste */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="ct_logo_250x150.png" alt="CT Investimentos Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="Governança.html">Governança</a></li>
+            <li><a href="#nossas-empresas">Nossas Empresas</a></li> <!-- Novo item adicionado -->
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="cta-buttons">
+        <a href="#investir">Investir em Energia Limpa</a>
+        <a href="#consultoria">Solicitar Consultoria</a>
+    </div>
+</header>
+
+<section id="banner" style="background-image: url('https://images.unsplash.com/photo-1593642532973-d31b6557fa68'); background-size: cover; background-position: center; padding: 120px 0; text-align: center; color: white;">
+    <div class="banner-content">
+        <h1>Investindo no Futuro da Energia Sustentável</h1>
+        <p>Transformando o setor financeiro com foco em práticas ESG e energia limpa.</p>
+        <a href="#projetos" class="cta-btn">Explore nossos Projetos</a>
+        <a href="#sustentabilidade" class="cta-btn">Saiba Mais sobre nossa Visão ESG</a>
+    </div>
+</section>
+
+<section id="sobre">
+    <h2>Quem Somos</h2>
+    <p>A <strong>CT Investimentos Holding Company</strong> é uma instituição financeira líder no setor de energia renovável e investimentos sustentáveis, comprometida com a inovação e a sustentabilidade.</p>
+    <a href="#about-details" class="cta-btn">Leia Mais</a>
+</section>
+
+<section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="service-cards">
+        <div class="card">
+            <h3>Fundos Imobiliários Fechados</h3>
+            <p>Fundos imobiliários fechados com foco em rentabilidade sustentável.</p>
+            <a href="#fundos" class="cta-btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+            <h3>Compra de Créditos Judiciais</h3>
+            <p>Intermediação da aquisição de créditos relacionados a processos judiciais, oferecendo aos investidores uma oportunidade de investimento com base em sentenças futuras.</p>
+            <a href="#consultoria" class="cta-btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+            <h3>Construção de Usinas Solares</h3>
+            <p>Desenvolvimento e gestão de usinas solares com foco em energia renovável.</p>
+            <a href="#usinas" class="cta-btn">Saiba Mais</a>
+        </div>
+        <div class="card">
+            <h3>Venda de Energia Compartilhada</h3>
+            <p>Oferecemos soluções de venda de energia compartilhada, promovendo a sustentabilidade.</p>
+            <a href="#energia-compartilhada" class="cta-btn">Saiba Mais</a>
+        </div>
+    </div>
+</section>
+
+<section id="governanca">
+    <h2>Governança e Compliance</h2>
+    <div class="content">
+        <p>Nosso compromisso com a transparência, ética e práticas de governança é um pilar fundamental para a confiança em nossas operações.</p>
+        <a href="#governance-details" class="cta-btn">Saiba Mais</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 CT Investimentos Holding Company | Todos os direitos reservados</p>
+        <p>Endereço: Rua Funchal, 538, Vila Olímpia, Sala 182, São Paulo, SP</p>
+        <div class="footer-contact">
+            <a href="tel:+551140405847" class="phone">📞 (11) 4040-0847</a>
+            <a href="https://wa.me/551199905193" class="whatsapp">WhatsApp</a>
+            <a href="#iso-certificacao">Certificação ISO ESG</a>
+        </div>
+    </div>
+
+    <!-- Imagens em Círculo no Rodapé -->
+    <div class="footer-logos">
+        <img src="1000018129-removebg-preview.png" alt="Logo 1">
+        <img src="1000018133-removebg-preview.png" alt="Logo 2">
+        <img src="1000018176-removebg-preview.png" alt="Logo 3">
+        <img src="1000018203-removebg-preview.png" alt="Logo 4">
+    </div>
+
+    <div class="footer-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#nossas-empresas">Nossas Empresas</a></li> <!-- Novo item no rodapé -->
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </div>
+</footer>
+
+</body>
+</html>
